@@ -14,18 +14,6 @@ mongoose.connect('mongodb://localhost:27017/nodeapi',
 
 requireDir('./src/models');
 
-
-const Product = mongoose.model('Product');
-
-// First route
-app.get('/', function( req, res){
-    Product.create({
-        title: 'React Native',
-        description: 'Build Native apps with React',
-        url: '/'
-    })
-    return res.status(200).send('Hello');
-});
-
+app.use('/api', require('./src/routes'));
 
 app.listen(3001);
