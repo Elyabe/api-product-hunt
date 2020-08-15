@@ -3,6 +3,7 @@ const requireDir = require('require-dir');
 
 // Starting App
 const app = express();
+app.use(express.json());
 
 // Starting database
 const mongoose = require('mongoose');
